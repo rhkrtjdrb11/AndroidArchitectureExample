@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- common key -->
+    <string name="mem_code">mem_code</string>
+    <string name="kids_code">kids_code</string>
+    <string name="image">image</string>
+    <string name="mode">mode</string>
+    <string name="uuid">uuid</string>
+
+    <!-- Gallery API key -->
+    <string name="mode_create">create</string>
+    <string name="mode_ins">ins</string>
+    <string name="mode_set_album">set_album</string>
+    <string name="mode_img_del">img_del</string>
+    <string name="mode_album_del">album_del</string>
+    <string name="mode_album_list">album_list</string>
+    <string name="mode_photo_list">photo_list</string>
+    <string name="mode_sort_prev">sort_prev</string>
+
+    <string name="album_code">album_code</string>
+    <string name="photo_code">photo_code</string>
+    <string name="album_title">album_title</string>
+    <string name="open_photo">open_photo</string>
+
+    <!-- Gallery params -->
+    <string-array name="req_gallery_params">
+        <item>@string/mode</item>
+        <item>@string/album_code</item>
+        <item>@string/photo_code</item>
+        <item>@string/mem_code</item>
+        <item>@string/kids_code</item>
+        <item>@string/album_title</item>
+        <item>@string/open_photo</item>
+    </string-array>
+
+    <!-- Card API key -->
+    <string name="year">year</string>
+    <string name="diary_code">diary_code</string>
+    <string name="month_code">month_code</string>
+    <string name="diary_date">diary_date</string>
+    <string name="subject">subject</string>
+    <string name="contents">contents</string>
+    <string name="img_01">img_01</string>
+    <string name="img_02">img_02</string>
+    <string name="img_03">img_03</string>
+    <string name="img_code">img_code</string>
+    <string name="img_number">img_number</string>
+
+    <!-- Card params -->
+    <string-array name="req_card_year_list_params">
+        <item>@string/mem_code</item>
+        <item>@string/kids_code</item>
+        <item>@string/year</item>
+    </string-array>
+
+    <string-array name="req_card_month_list_params">
+        <item>@string/mem_code</item>
+        <item>@string/kids_code</item>
+        <item>@string/month_code</item>
+    </string-array>
+
+    <string-array name="req_card_diary_params">
+        <item>@string/diary_code</item>
+    </string-array>
+
+    <string-array name="req_card_add_diary_params">
+        <item>@string/mem_code</item>
+        <item>@string/kids_code</item>
+        <item>@string/diary_date</item>
+        <item>@string/subject</item>
+        <item>@string/contents</item>
+    </string-array>
+
+    <string-array name="req_card_del_diary_params">
+        <item>@string/diary_code</item>
+    </string-array>
+
+    <string-array name="req_card_edit_diary_params">
+        <item>@string/mem_code</item>
+        <item>@string/kids_code</item>
+        <item>@string/diary_code</item>
+        <item>@string/diary_date</item>
+        <item>@string/subject</item>
+        <item>@string/contents</item>
+    </string-array>
+
+    <string-array name="req_card_img_del_params">
+        <item>@string/img_code</item>
+        <item>@string/img_number</item>
+        <item>@string/diary_code</item>
+    </string-array>
+
+    <!-- Maditor API key -->
+    <string name="seq">seq</string>
+    <string name="page">page</string>
+
+    <!-- Maditor Params -->
+    <string-array name="req_maditor_page_params">
+        <item>@string/page</item>
+    </string-array>
+
+    <string-array name="req_maditor_like_params">
+        <item>@string/seq</item>
+        <item>@string/uuid</item>
+    </string-array>
+
+    <!-- Member API -->
+    <string name="device_id">device_id</string>
+    <string name="serial_number">serial_number</string>
+    <string name="sns_type">sns_type</string>
+    <string name="sns_id">sns_id</string>
+    <string name="mem_id">mem_id</string>
+    <string name="mem_name">mem_name</string>
+    <string name="mem_nick">mem_nick</string>
+    <string name="mem_pwd">mem_pwd</string>
+    <string name="mem_email">mem_email</string>
+    <string name="m_tel">m_tel</string>
+    <string name="kids_name">kids_name</string>
+    <string name="kids_birthday">kids_birthday</string>
+    <string name="kids_height">kids_height</string>
+    <string name="kids_weight">kids_weight</string>
+    <string name="kids_imageurl">kids_imageurl</string>
+    <string name="new_pwd">new_pwd</string>
+    <string name="kids_default">kids_default</string>
+
+    <!-- Member API params -->
+    <string-array name="req_member_login_params">
+        <item>@string/device_id</item>
+        <item>@string/serial_number</item>
+        <item>@string/uuid</item>
+        <item>@string/mode</item>
+        <item>@string/sns_type</item>
+        <item>@string/sns_id</item>
+        <item>@string/mem_id</item>
+        <item>@string/mem_pwd</item>
+        <item>@string/mem_email</item>
+    </string-array>
+
+
+    <string-array name="req_member_join_params">
+        <item>@string/device_id</item>
+        <item>@string/serial_number</item>
+        <item>@string/uuid</item>
+        <item>@string/mode</item>
+        <item>@string/sns_type</item>
+        <item>@string/sns_id</item>
+        <item>@string/mem_id</item>
+        <item>@string/mem_name</item>
+        <item>@string/mem_nick</item>
+        <item>@string/mem_pwd</item>
+        <item>@string/mem_email</item>
+        <item>@string/m_tel</item>
+        <item>@string/kids_name</item>
+        <item>@string/kids_birthday</item>
+        <item>@string/kids_height</item>
+        <item>@string/kids_weight</item>
+    </string-array>
+
+    <string-array name="req_member_info_params">
+        <item>@string/mem_code</item>
+    </string-array>
+
+    <string-array name="req_member_info_edit_params">
+        <item>@string/mem_code</item>
+        <item>@string/mem_name</item>
+        <item>@string/mem_nick</item>
+        <item>@string/m_tel</item>
+    </string-array>
+
+    <string-array name="req_member_pw_edit_params">
+        <item>@string/mem_code</item>
+        <item>@string/mem_pwd</item>
+        <item>@string/new_pwd</item>
+    </string-array>
+
+    <string-array name="req_member_leave_params">
+        <item>@string/mem_code</item>
+    </string-array>
+
+    <string-array name="req_member_child_add_params">
+        <item>@string/mem_code</item>
+        <item>@string/kids_name</item>
+        <item>@string/kids_birthday</item>
+        <item>@string/kids_height</item>
+        <item>@string/kids_weight</item>
+    </string-array>
+
+    <string-array name="req_member_child_info_params">
+        <item>@string/mem_code</item>
+        <item>@string/kids_code</item>
+    </string-array>
+
+    <string-array name="req_member_children_info_params">
+        <item>@string/mem_code</item>
+    </string-array>
+
+    <string-array name="req_member_child_info_edit_params">
+        <item>@string/mem_code</item>
+        <item>@string/kids_code</item>
+        <item>@string/kids_name</item>
+        <item>@string/kids_birthday</item>
+        <item>@string/kids_height</item>
+        <item>@string/kids_weight</item>
+        <item>@string/kids_default</item>
+    </string-array>
+
+    <string-array name="req_member_child_img_change_params">
+        <item>@string/mem_code</item>
+        <item>@string/kids_code</item>
+    </string-array>
+
+    <!-- Vaccinate API key -->
+    <string name="vaccination_code">vaccination_code</string>
+    <string name="status">status</string>
+
+    <!-- Vaccinate API params -->
+    <string-array name="req_vac_status_params">
+        <item>@string/mem_code</item>
+        <item>@string/kids_code</item>
+    </string-array>
+
+    <string-array name="req_vac_list_status_params">
+        <item>@string/mem_code</item>
+        <item>@string/kids_code</item>
+    </string-array>
+
+    <string-array name="req_vac_change_params">
+        <item>@string/mem_code</item>
+        <item>@string/kids_code</item>
+        <item>@string/vaccination_code</item>
+        <item>@string/status</item>
+    </string-array>
+
+    <string-array name="req_vac_notice_params">
+        <item>@string/mem_code</item>
+    </string-array>
+
+    <!-- Weather API key -->
+    <string name="sido_name">sido_name</string>
+
+    <string-array name="req_weather_params">
+        <item>@string/sido_name</item>
+    </string-array>
+</resources>

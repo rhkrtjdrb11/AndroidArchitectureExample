@@ -1,5 +1,6 @@
 package com.ms.gsk.androidarchitectureexample.db;
 
+import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.persistence.db.SupportSQLiteDatabase;
 import android.arch.persistence.room.Database;
@@ -7,9 +8,12 @@ import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
 
 import com.compa.gsk.base.BaseApplication;
 import com.compa.gsk.util.AppContext;
+import com.ms.gsk.androidarchitectureexample.db.dao.WeatherDAO;
+import com.ms.gsk.androidarchitectureexample.db.entity.WeatherEntity;
 
 import java.util.List;
 
@@ -20,7 +24,7 @@ import java.util.List;
  */
 @Database(
         entities = {
-
+                WeatherEntity.class
         },
         version = 1
 )
@@ -29,7 +33,9 @@ public abstract class AppDataBase extends RoomDatabase {
     private static AppDataBase sInstance;
     private final MutableLiveData<Boolean> mIsDatabaseCreated = new MutableLiveData<>();
 
-    public static AppDataBase getInstance() {
+    public abstract WeatherDAO weatherDAO();
+
+    public static void initialized() {
         if (sInstance == null) {
             synchronized (AppDataBase.class) {
                 if (sInstance == null) {
@@ -38,33 +44,22 @@ public abstract class AppDataBase extends RoomDatabase {
                 }
             }
         }
+    }
+
+    public static AppDataBase getInstance(){
+        if(sInstance == null){
+            throw new IllegalStateException("AppDataBase not initialized");
+        }
         return sInstance;
     }
 
     private static AppDataBase buildDatabase() {
-        return Room.databaseBuilder(AppContext.get(), AppDataBase.class, BaseApplication.db_name)
+        return Room.inMemoryDatabaseBuilder(AppContext.get(), AppDataBase.class)
                 .addCallback(new Callback() {
                     @Override
                     public void onCreate(@NonNull SupportSQLiteDatabase db) {
                         super.onCreate(db);
-/*                        executors.diskIO().execute(() -> {
-                            // Add a delay to simulate a long-running operation
-                            addDelay();
-                            // Generate the data for pre-population
-                            AppDatabase database = AppDatabase.getInstance(appContext, executors);
-                            List<ProductEntity> products = DataGenerator.generateProducts();
-                            List<CommentEntity> comments = DataGenerator.generateCommentsForProducts(products);
-
-                            insertData(database, products, comments);
-                            // notify that the database was created and it's ready to be used
-                            database.setDatabaseCreated();
-                        });*/
-                    }
-
-                    @Override
-                    public void onOpen(@NonNull SupportSQLiteDatabase db) {
-                        super.onOpen(db);
-
+                        AppDataBase.getInstance().setDatabaseCreated();
                     }
                 }).build();
     }
@@ -76,5 +71,9 @@ public abstract class AppDataBase extends RoomDatabase {
 
     private void setDatabaseCreated(){
         mIsDatabaseCreated.postValue(true);
+    }
+
+    public LiveData<Boolean> getDatabaseCreated() {
+        return mIsDatabaseCreated;
     }
 }

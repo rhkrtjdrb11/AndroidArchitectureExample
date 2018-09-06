@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- TAG 및 로컬 DB -->
+    <string name="app_tag">ikhp_tag</string>
+    <string name="db_tag">db_tag</string>
+    <string name="http_tag">ikhp_http</string>
+    <string name="pref_name">_ikhp_pref</string>
+    <string name="db_name">_ikhp.db</string>
+
+    <!-- API URL -->
+    <string name="base_url">http://api.ikn.kr/whp/</string>
+    <string name="test_url">http://192.168.0.177:3000/</string>
+
+    <string name="api_success">success</string>
+    <string name="api_failed">fail</string>
+    <string name="api_error">error</string>
+    <string name="api_no_member">nomember</string>
+    <string name="network_error_message">네트워크 상태를 확인해 주세요.</string>
+
+</resources>
